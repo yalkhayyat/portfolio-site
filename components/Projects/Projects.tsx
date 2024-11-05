@@ -1,6 +1,37 @@
+import { getPostData } from "@/lib/posts";
 import ProjectCard from "./ProjectCard";
 
-export default function Projects() {
+export default async function Projects() {
+  const projectData = await Promise.all([
+    getPostData("posts/novus.md"),
+    getPostData("posts/terrain.md"),
+    getPostData("posts/aerohub.md"),
+    getPostData("posts/updog.md"),
+  ]);
+
+  const projects = [
+    {
+      title: "NOVUS Flight Simulator",
+      imageUrl: "/images/novus.webp",
+      contentHtml: projectData[0].contentHtml,
+    },
+    {
+      title: "Global Terrain Generator",
+      imageUrl: "/images/terrain.png",
+      contentHtml: projectData[1].contentHtml,
+    },
+    {
+      title: "Aerohub",
+      imageUrl: "/images/aerohub.png",
+      contentHtml: projectData[2].contentHtml,
+    },
+    {
+      title: "Up Dog",
+      imageUrl: "/images/updog.png",
+      contentHtml: projectData[3].contentHtml,
+    },
+  ];
+
   return (
     <div className="w-2/3 xl:w-1/2 flex flex-col justify-self-center py-28">
       <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
@@ -21,26 +52,14 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 w-full ">
-        <ProjectCard
-          title={"NOVUS Flight Simulator"}
-          imageUrl={"/images/novus.webp"}
-          markdownPath={"/ProjectDescriptions/novus.md"} // Example Markdown content
-        />
-        <ProjectCard
-          title={"Global Terrain Generator"}
-          imageUrl={"/images/terrain.png"}
-          markdownPath={"/ProjectDescriptions/terrain.md"} // Example Markdown content
-        />
-        <ProjectCard
-          title={"Aerohub"}
-          imageUrl={"/images/aerohub.png"}
-          markdownPath={"/ProjectDescriptions/aerohub.md"} // Example Markdown content
-        />
-        <ProjectCard
-          title={"Up Dog"}
-          imageUrl={"/images/updog.png"}
-          markdownPath={"/ProjectDescriptions/updog.md"} // Example Markdown content
-        />
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            title={project.title}
+            imageUrl={project.imageUrl}
+            contentHtml={project.contentHtml}
+          />
+        ))}
       </div>
     </div>
   );

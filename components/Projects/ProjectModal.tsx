@@ -5,18 +5,7 @@ import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const ProjectModal = ({ isOpen, onClose, title, markdownPath }) => {
-  const [content, setContent] = useState("");
-
-  useEffect(() => {
-    if (isOpen && markdownPath) {
-      fetch(markdownPath)
-        .then((response) => response.text())
-        .then((text) => setContent(text))
-        .catch((error) => console.error("Error loading markdown:", error));
-    }
-  }, [isOpen, markdownPath]);
-
+const ProjectModal = ({ isOpen, onClose, title, contentHtml }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -25,13 +14,13 @@ const ProjectModal = ({ isOpen, onClose, title, markdownPath }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.3 }}
         >
           <motion.div
             initial={{ y: 20 }}
             animate={{ y: 0 }}
             exit={{ y: 20 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3 }}
             className="bg-transparent backdrop-blur-lg text-white rounded-lg p-6 h-5/6 w-2/3 flex flex-col border-2 border-teal-400"
           >
             <div className="flex justify-between items-center mb-4">
@@ -47,14 +36,13 @@ const ProjectModal = ({ isOpen, onClose, title, markdownPath }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2, delay: 0.3 }}
+              transition={{ duration: 0.2, delay: 0.5 }}
               className="scrollbar overflow-y-auto flex-grow"
             >
-              <div className="prose prose-invert max-w-none w-full xl:w-2/3 justify-self-center px-6">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {content}
-                </ReactMarkdown>
-              </div>
+              <div
+                dangerouslySetInnerHTML={{ __html: contentHtml }}
+                className="prose prose-invert max-w-none w-full xl:w-2/3 justify-self-center px-6"
+              ></div>
             </motion.div>
           </motion.div>
         </motion.div>

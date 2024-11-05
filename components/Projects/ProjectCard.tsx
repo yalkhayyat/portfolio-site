@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ProjectModal from "./ProjectModal";
 
-export default function ProjectCard({ title, imageUrl, markdownPath }) {
+export default function ProjectCard({ title, imageUrl, contentHtml }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => setModalOpen(true);
@@ -40,7 +40,7 @@ export default function ProjectCard({ title, imageUrl, markdownPath }) {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         title={title}
-        markdownPath={markdownPath} // Pass the Markdown content to the modal
+        contentHtml={contentHtml} // Pass the Markdown content to the modal
       />
     </>
   );
