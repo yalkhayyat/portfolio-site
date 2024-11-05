@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,6 +25,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.className} bg-[radial-gradient(circle_at_50%_75%,#27272b,#18181b)] text-white min-h-screen flex flex-col items-center justify-center scrollbarmain`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
