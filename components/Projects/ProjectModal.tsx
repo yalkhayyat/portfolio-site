@@ -22,12 +22,18 @@ const ProjectModal = ({ isOpen, onClose, title, markdownPath }) => {
       {isOpen && (
         <motion.div
           className="fixed inset-0  flex items-center justify-center z-50 bg-black/90"
-          initial={{ opacity: 0, translateY: 20 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          exit={{ opacity: 0, translateY: 20 }}
-          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
         >
-          <div className="bg-transparent backdrop-blur-lg text-white rounded-lg p-6 h-5/6 w-2/3 flex flex-col border-2">
+          <motion.div
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
+            exit={{ y: 20 }}
+            transition={{ duration: 0.2 }}
+            className="bg-transparent backdrop-blur-lg text-white rounded-lg p-6 h-5/6 w-2/3 flex flex-col border-2 border-teal-400"
+          >
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-3xl font-bold text-teal-400">{title}</h2>
               <button
@@ -44,7 +50,7 @@ const ProjectModal = ({ isOpen, onClose, title, markdownPath }) => {
                 </ReactMarkdown>
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

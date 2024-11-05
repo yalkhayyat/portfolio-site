@@ -24,12 +24,12 @@
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background: #FFFFFF;
+    background: #2dd4bf;
     border-radius: 4px;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #aeaeae;
+    background: #15665b;
   }
 
   .scrollbarmain::-webkit-scrollbar {
@@ -42,12 +42,12 @@
   }
 
   .scrollbarmain::-webkit-scrollbar-thumb {
-    background: #FFFFFF;
+    background: #2dd4bf;
     border-radius: 4px;
   }
 
   .scrollbarmain::-webkit-scrollbar-thumb:hover {
-    background: #aeaeae;
+    background: #15665b;
   }
 }
 

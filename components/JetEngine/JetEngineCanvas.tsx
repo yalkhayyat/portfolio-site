@@ -17,8 +17,8 @@ export function JetEngineCanvas({ modelPath }: { modelPath: string }) {
     >
       <Canvas
         camera={{
-          position: [0, 0, 4],
-          fov: 30,
+          position: [0, 0, 1.5],
+          fov: 70,
         }}
       >
         <Suspense fallback={null}>
