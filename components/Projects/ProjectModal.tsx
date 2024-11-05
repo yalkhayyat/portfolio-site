@@ -43,13 +43,19 @@ const ProjectModal = ({ isOpen, onClose, title, markdownPath }) => {
                 ✖
               </button>
             </div>
-            <div className="scrollbar overflow-y-auto flex-grow">
-              <div className="prose prose-invert max-w-none w-2/3 justify-self-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, delay: 0.3 }}
+              className="scrollbar overflow-y-auto flex-grow"
+            >
+              <div className="prose prose-invert max-w-none w-full xl:w-2/3 justify-self-center px-6">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {content}
                 </ReactMarkdown>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       )}

@@ -13,6 +13,7 @@ export default function Projects() {
         <a
           className="hover:underline text-teal-400"
           href="https://github.com/yalkhayyat"
+          target="_blank"
         >
           Github
         </a>
