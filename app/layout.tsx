@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable}`}>
       <body
-        className={`${spaceGrotesk.className} bg-[radial-gradient(circle_at_50%_75%,#27272b,#18181b)] text-white min-h-screen flex flex-col items-center justify-center scrollbarmain`}
+        className={`${spaceGrotesk.className} bg-[radial-gradient(circle_at_50%_75%,#1e3330,#000000)] text-white min-h-screen flex flex-col items-center justify-center scrollbarmain`}
       >
         {children}
         <Analytics />

@@ -29,7 +29,7 @@ export default function JetEngine({ modelPath }: JetEngineProps) {
           className="text-center absolute bottom-1/4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Hi! I&apos;m <span className="text-teal-400">Yousif</span>.
@@ -46,7 +46,7 @@ export default function JetEngine({ modelPath }: JetEngineProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 1,
+            duration: 0.5,
             delay: 0.5, // Delay for the arrow fade-in
           }}
         >

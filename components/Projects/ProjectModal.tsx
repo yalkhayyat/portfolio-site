@@ -29,8 +29,11 @@ const ProjectModal = ({ isOpen, onClose, title, markdownPath }) => {
         >
           <div className="bg-transparent backdrop-blur-lg text-white rounded-lg p-6 h-5/6 w-2/3 flex flex-col border-2">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold">{title}</h2>
-              <button onClick={onClose} className="text-xl">
+              <h2 className="text-3xl font-bold text-teal-400">{title}</h2>
+              <button
+                onClick={onClose}
+                className="text-teal-400 text-xl text-center"
+              >
                 ✖
               </button>
             </div>

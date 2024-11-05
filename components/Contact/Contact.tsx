@@ -1,5 +1,8 @@
+"use client";
+
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const languages = [
@@ -26,7 +29,12 @@ export default function Contact() {
   ];
 
   return (
-    <div className="hidden fixed xl:flex flex-col gap-10 w-56 top-20 px-6">
+    <motion.div
+      initial={{ opacity: 0, translateY: 20 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 0.5 }}
+      className="hidden fixed xl:flex flex-col gap-10 w-56 top-20 px-6"
+    >
       {/* Contact Section */}
       <div className="space-y-2 z-10">
         <h2 className="text-2xl text-teal-400 font-bold ">Contact</h2>
@@ -98,6 +106,6 @@ export default function Contact() {
         <ExternalLink size={16} />
         <span className="text-sm font-medium">Resume</span>
       </Link>
-    </div>
+    </motion.div>
   );
 }

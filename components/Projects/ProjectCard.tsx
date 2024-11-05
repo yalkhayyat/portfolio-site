@@ -17,9 +17,10 @@ export default function ProjectCard({ title, imageUrl, markdownPath }) {
         whileHover={{ scale: 1.02 }} // Increases size on hover
         transition={{ duration: 0.1 }}
         onClick={handleOpenModal}
+        className=" group hover:drop-shadow-[0_0px_20px_rgba(45,212,191,0.3)] transition-all"
       >
-        <div className="border-2 rounded-xl bg-white">
-          <div className="relative w-full h-56 overflow-hidden rounded-lg">
+        <div className="border-2 rounded-lg group-hover:border-teal-400">
+          <div className="relative w-full h-56 overflow-hidden rounded-md">
             <Image
               alt={title}
               src={imageUrl}
