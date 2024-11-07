@@ -22,7 +22,7 @@ export default async function Projects() {
     },
     {
       title: "Aerohub",
-      imageUrl: "/images/aerohub.png",
+      imageUrl: "/images/aerohub2.png",
       contentHtml: projectData[2].contentHtml,
     },
     {

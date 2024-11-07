@@ -2,4 +2,4 @@
 
 The website is built with Next.js, React, Tailwind CSS, Supabase, and Clerk.
 
-![Aerohub](/images/aerohub2.png)
+![Aerohub](/images/aerohub.png)
