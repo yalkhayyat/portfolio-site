@@ -5,7 +5,10 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Yousif Alkhayyat - Portfolio",
-  description: "My projects",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const spaceGrotesk = Space_Grotesk({
