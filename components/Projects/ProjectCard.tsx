@@ -34,7 +34,9 @@ export default function ProjectCard({ title, imageUrl, contentHtml }) {
         </div>
 
         <div className="bottom-0 left-0 right-0 py-4">
-          <div className="text-white text-2xl font-bold text-left">{title}</div>
+          <div className="text-white group-hover:text-teal-400 text-xl text-left">
+            {title}
+          </div>
         </div>
       </motion.button>
 

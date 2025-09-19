@@ -7,12 +7,11 @@ import { motion } from "framer-motion";
 export default function Contact() {
   const languages = [
     "C/C++",
+    "CUDA",
     "Javascript",
-    "Python",
-    "Lua",
     "Typescript",
+    "Python",
     "SQL",
-    "Java",
     "HTML/CSS",
   ];
 
@@ -21,11 +20,13 @@ export default function Contact() {
     "Next.js",
     "Flask",
     "MongoDB",
-    "PostgreSQL",
+    "PostgreSQL/MySQL",
     "Git",
     "Supabase",
     "Docker",
     "Tailwind CSS",
+    "Linux",
+    "Jenkins",
   ];
 
   return (

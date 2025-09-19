@@ -26,16 +26,28 @@ export default function JetEngine({ modelPath }: JetEngineProps) {
       {/* Fade-in text container */}
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
-          className="text-center absolute bottom-1/4"
+          className="text-left absolute bottom-24"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Hi! I&apos;m <span className="text-teal-400">Yousif</span>.
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Hi! I&apos;m <span className="text-teal-400">Yousif.</span>
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-white">
-            I like being creative with software.
+          <p className="text-lg md:text-xl font-mono text-white text-left">
+            <span className="text-teal-400">class</span> Me {"{"}
+            <br />
+            &nbsp;&nbsp;education ={" "}
+            <span className="text-teal-400">
+              "CS @ UIUC"
+            </span>
+            ,<br />
+            &nbsp;&nbsp;interests ={" "}
+            <span className="text-teal-400">
+              "System Programming, GPUs, Databases"
+            </span>
+            <br />
+            {"};"}
           </p>
         </motion.div>
       </div>

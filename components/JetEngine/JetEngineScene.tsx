@@ -16,7 +16,7 @@ export function JetEngineScene({ modelPath }: { modelPath: string }) {
   const MIN_SPEED = 0.005; // Minimum spinning speed
   const MAX_SPEED = 1; // Maximum possible spinning speed
   const FRICTION = 0.99; // Air resistance / friction factor
-  const MOUSE_SENSITIVITY = 0.0005; // How much mouse movement affects rotation
+  const MOUSE_SENSITIVITY = 0.000005; // How much mouse movement affects rotation
 
   // Track mouse movement and calculate speed
   useEffect(() => {
@@ -39,8 +39,9 @@ export function JetEngineScene({ modelPath }: { modelPath: string }) {
         MAX_SPEED
       );
 
-      lastMouseXRef.current = event.clientX;
-      lastMouseYRef.current = event.clientY;
+      const { innerWidth, innerHeight } = window;
+      lastMouseXRef.current = (event.clientX / innerWidth) * 2 - 1; // -1 to 1
+      lastMouseYRef.current = (event.clientY / innerHeight) * 2 - 1; // -1 to 1
       lastTimeRef.current = currentTime;
     };
 
@@ -73,6 +74,12 @@ export function JetEngineScene({ modelPath }: { modelPath: string }) {
 
       // Apply rotation
       meshRef.current.rotation.z += spinSpeedRef.current;
+      // meshRef.current.rotation.z += MIN_SPEED;
+      const targetX = lastMouseYRef.current * 0.1;
+      const targetY = lastMouseXRef.current * 0.1;
+
+      meshRef.current.rotation.x = targetX;
+      meshRef.current.rotation.y = targetY;
     }
   });
 
